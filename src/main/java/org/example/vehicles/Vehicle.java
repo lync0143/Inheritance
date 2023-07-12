@@ -1,9 +1,14 @@
 package org.example.vehicles;
 
-public class Vehicle {
-    private int numWheels;
+public class Vehicle implements Comparable<Vehicle> {
+    private final int numWheels;
     public Vehicle(int numWheels) {
         this.numWheels = numWheels;
+    }
+
+    @Override
+    public int compareTo(Vehicle o) {
+        return Integer.compare(this.getNumWheels(), o.getNumWheels());
     }
 
     public void move() {
